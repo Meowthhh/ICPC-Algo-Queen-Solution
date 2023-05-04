@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define fastio() ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
+#define pb push_back
+#define ff first
+#define ss second
+#define gcd(a,b) __gcd(a,b)
+typedef long long ll;
+#include <ext/pb_ds/assoc_container.hpp>
+using namespace __gnu_pbds;
+typedef tree< ll, null_type, less_equal<ll>, rb_tree_tag, tree_order_statistics_node_update > ordered_set;
+//0 based index
+//cout<<*X.find_by_order(1)<<endl; // iterator to the k-th element
+// cout<<X.order_of_key(-5)<<endl;  // number of items in a set that are strictly smaller than our item
+int a[26];
+
+void solve()
+{
+    int n, a;
+    cin >> n;
+    ll cnt = 0;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a;
+        if (a % 2 == 0) cnt++;
+    }
+    cout << cnt*(cnt - 1) / 2 << endl;
+}
+
+int main()
+{
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
+
+    fastio();
+    int t;
+    cin >> t;
+    while (t--) solve();
+}
+
